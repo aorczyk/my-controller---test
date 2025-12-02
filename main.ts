@@ -12,15 +12,17 @@ myController.onCommand(function () {
     if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowDown), KeyState.Pressed)) {
         ledY = 4
     }
+    if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowUp), KeyState.Released) || myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowDown), KeyState.Released)) {
+        ledY = 2
+    }
     if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowRight), KeyState.Pressed)) {
         ledX = 4
     }
     if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowLeft), KeyState.Pressed)) {
         ledX = 0
     }
-    if (myController.areAllKeysReleased()) {
+    if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowRight), KeyState.Released) || myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowLeft), KeyState.Released)) {
         ledX = 2
-        ledY = 2
     }
     if (myController.isKey("1", KeyState.Pressed)) {
         if (myController.buttonToggled()) {
