@@ -6,23 +6,23 @@ myController.onCommand(function () {
     if (myController.isSlider(InputSide.Left) || myController.isJoystick(InputSide.Right, JoystickDirection.y) || myController.isOrientation(InputOrientaton.y)) {
         ledY = myController.getCommandValue() + 2
     }
+    if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowDown), KeyState.Released) || myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowUp), KeyState.Released)) {
+        ledY = 2
+    }
+    if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowRight), KeyState.Released) || myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowLeft), KeyState.Released)) {
+        ledX = 2
+    }
     if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowUp), KeyState.Pressed)) {
         ledY = 0
     }
     if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowDown), KeyState.Pressed)) {
         ledY = 4
     }
-    if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowUp), KeyState.Released) || myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowDown), KeyState.Released)) {
-        ledY = 2
-    }
     if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowRight), KeyState.Pressed)) {
         ledX = 4
     }
     if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowLeft), KeyState.Pressed)) {
         ledX = 0
-    }
-    if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowRight), KeyState.Released) || myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowLeft), KeyState.Released)) {
-        ledX = 2
     }
     if (myController.isKey("1", KeyState.Pressed)) {
         if (myController.buttonToggled()) {
