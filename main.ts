@@ -24,6 +24,9 @@ myController.onCommand(function () {
     if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowLeft), KeyState.Pressed)) {
         ledX = 0
     }
+    if (myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowRight), KeyState.Pressed) && myController.isKey(myController.getKeyCodeValue(KeyCode.ArrowLeft), KeyState.Pressed)) {
+        ledX = 2
+    }
     if (myController.isKey("1", KeyState.Pressed)) {
         if (myController.buttonToggled()) {
             myController.setButton("1", KeyVisibility.Visible, KeyColor.Green, "")
