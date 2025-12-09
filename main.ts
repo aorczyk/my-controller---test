@@ -40,16 +40,8 @@ myController.onCommand(function () {
     led.plot(ledX, ledY)
 })
 myController.onSetup(SetupConfirmation.NoRequire, function () {
-    myController.sendData("vc;init;")
-myController.sendData("vc;sl;1;-2;2;1;1;0;1;;")
-myController.sendData("vc;sr;1;-2;2;1;0;0;0;;")
-myController.sendData("vc;jrx;-2;2;1;0;0;")
-myController.sendData("vc;jry;-2;2;1;1;0;")
-myController.sendData("vc;ox;1;-45;45;-2;2;1;0;0;")
-myController.sendData("vc;oy;1;-45;45;-2;2;1;1;0;")
-myController.sendData("vc;il;1;")
-myController.sendData("vc;show;sl,sr,jr,ar,br,bl;")
-myController.setButton("2", KeyVisibility.Visible, KeyColor.Black, "0")
+    myController.importSettings("vc;init; vc;sl;1;-2;2;1;1;0;1;; vc;sr;1;-2;2;1;0;0;0;; vc;jrx;-2;2;1;0;0; vc;jry;-2;2;1;1;0; vc;b;1;1;1;1; vc;b;2;1;0;0; vc;ox;1;-45;45;-2;2;1;0;0; vc;oy;1;-45;45;-2;2;1;1;0; vc;il;1; vc;show;sl,sr,jr,ar,br,bl;")
+    myController.setButton("2", KeyVisibility.Visible, KeyColor.Black, "0")
 })
 let ledY = 0
 let ledX = 0
