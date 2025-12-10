@@ -37,10 +37,19 @@ myController.onCommand(function () {
     if (myController.isKey("2", KeyState.Pressed)) {
         myController.setButton("2", KeyVisibility.Visible, KeyColor.Black, myController.buttonToggleCount(3))
     }
+    if (myController.isKey("3", KeyState.Pressed)) {
+        basic.showIcon(IconNames.House)
+    }
+    if (myController.isKey("4", KeyState.Pressed)) {
+        basic.showIcon(IconNames.Heart)
+    }
+    if (myController.isKey("3", KeyState.Released) || myController.isKey("4", KeyState.Released)) {
+        basic.clearScreen()
+    }
     led.plot(ledX, ledY)
 })
 myController.onSetup(SetupConfirmation.NoRequire, function () {
-    myController.importSettings("vc;init; vc;sl;1;-2;2;1;1;0;1;; vc;sr;1;-2;2;1;0;0;0;; vc;jrx;-2;2;1;0;0; vc;jry;-2;2;1;1;0; vc;b;2;1;0;0; vc;ox;1;-45;45;-2;2;1;0;0; vc;oy;1;-45;45;-2;2;1;1;0; vc;il;1; vc;show;sl,sr,jr,ar,br,bl;")
+    myController.importSettings("vc;init; vc;sl;1;-2;2;1;1;0;1;; vc;sr;1;-2;2;1;0;0;0;; vc;jrx;-2;2;1;0;0; vc;jry;-2;2;1;1;0; vc;b;2;1;0;0; vc;b;3;1;0;<i class=\"fa-solid fa-house\"></i>; vc;b;4;1;0;<i class=\"fa-solid fa-heart\"></i>; vc;ox;1;-45;45;-2;2;1;0;0; vc;oy;1;-45;45;-2;2;1;1;0; vc;il;1; vc;ir;2; vc;show;sl,sr,jr,ar,br,bl;")
     myController.setButton("2", KeyVisibility.Visible, KeyColor.Black, "0")
 })
 let ledY = 0
