@@ -5,7 +5,8 @@
         "core": "*",
         "microphone": "*",
         "bluetooth": "*",
-        "My Controller": "github:aorczyk/vc-extension#master"
+        "My Controller": "github:aorczyk/vc-extension#master",
+        "PF Transmitter": "github:aorczyk/lego-pf-transmitter#v1.0.4"
     },
     "files": [
         "main.blocks",
